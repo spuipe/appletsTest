@@ -1,0 +1,77 @@
+.page {
+    height: 1050px;
+    background: #F5F5F5;
+
+    &::before {
+        content: "";
+        display: table;
+    }
+
+    .main {
+        height: 920px;
+        margin: 60px 50px 0 50px;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+
+        .main-image {
+            margin-top: 100px;
+
+            .main-apple {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        .main-order1 {
+            font-size: 30px;
+            color: #808080;
+        }
+
+        .main-order2 {
+            font-size: 35px;
+            color: #808080;
+            margin-top: 10px;
+        }
+
+        .to-order {
+            background: rgb(206, 150, 101);
+            color: #fff;
+            width: 350px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 12Px;
+            border-radius: 5Px;
+            margin-top: 200px;
+        }
+
+        .history-order {
+            font-size: 12Px;
+            color: #808080;
+            margin-top: 40px;
+        }
+    }
+
+    .scanning {
+        position: fixed;
+        right: 0;
+        bottom: 200px;
+        width: 100px;
+        height: 70px;
+        border-radius: 20Px 0 0 20Px;
+        background: #fff;
+        text-align: center;
+        line-height: 70px;
+        z-index: 10;
+        border: 1px solid #F5F5F5;
+
+        .scanning-image {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    }
+}

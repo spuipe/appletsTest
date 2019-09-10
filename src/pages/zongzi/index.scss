@@ -1,0 +1,19 @@
+.main {
+    height: 1000rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .toshop {
+        width: 250rpx;
+        height: 70rpx;
+        line-height: 70rpx;
+        background: #D2691E;
+        color: #fff;
+        text-align: center;
+        font-weight: 500;
+        font-size: 30rpx;
+        border-radius: 20px;
+    }
+}

@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    flex-direction: column;
+
+    .header-user {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-username {
+        font-weight: 500;
+        font-size: 40px;
+        margin-top: 20px;
+    }
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+}
+
+.hr {
+    background: #F5F5F5;
+    height: 20px;
+}
+
+.main {
+    padding: 0 40px;
+
+    .main-item {
+        display: flex;
+        align-items: center;
+        height: 100px;
+
+        .main-item-left {
+            width: 30%;
+            font-size: 35px;
+        }
+
+        .main-item-right {
+            font-size: 35px;
+
+            .main-birthday {
+                color: #808080;
+                font-size: 30px;
+            }
+
+            .main-item-sex {
+                margin-right: 50px;
+            }
+        }
+    }
+
+    .save {
+        width: 90%;
+        text-align: center;
+        height: 80px;
+        line-height: 80px;
+        color: #fff;
+        margin-left: 40px;
+        border-radius: 5Px;
+        background: #808080;
+    }
+}

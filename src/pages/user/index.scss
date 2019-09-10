@@ -1,0 +1,109 @@
+.userInfo {
+    display: flex;
+    justify-content: space-between;
+
+    .name-avatar {
+        margin-left: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .userName {
+            margin-left: 20px;
+        }
+    }
+
+    .userVip {
+        margin-right: 50px;
+        height: 40Px;
+        line-height: 40Px;
+        font-size: 14Px;
+        font-weight: 600;
+    }
+}
+
+.header-other-info {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    padding-bottom: 30px;
+    justify-content: space-between;
+
+    .header-other-info-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .header-other-info-item-count {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .header-other-info-item-name {
+            font-size: 30px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+    }
+
+    .header-other-info-item-margin1 {
+        margin-left: 100px;
+    }
+
+    .header-other-info-item-margin2 {
+        margin-right: 100px;
+    }
+}
+
+.main-vip-integral {
+    display: flex;
+    padding: 50px 130px;
+    justify-content: space-between;
+
+    .main-vip {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .main-vip-area {
+            margin-top: 20px;
+            font-size: 30px;
+        }
+    }
+
+    .main-integral {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .main-integral-area {
+            margin-top: 20px;
+            font-size: 30px;
+        }
+    }
+
+    .main-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.header-avatar {
+    width: 100%;
+    height: 100%;
+}
+
+.main-list-item {
+    margin: 30Px;
+}
+
+.main-order {
+    font-size: 16Px;
+}
+
+.item-icon{
+    margin-right: 30px;
+}

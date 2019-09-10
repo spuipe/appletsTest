@@ -1,0 +1,90 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+
+    .header-left {
+        font-size: 12Px;
+        font-weight: 500;
+    }
+
+    .header-right {
+        font-size: 12Px;
+        color: rgba(0, 0, 0, 0.7);
+        font-weight: 500;
+    }
+}
+
+.main-area {
+    background: #F5F5F5;
+
+    &::before {
+        content: "";
+        display: table;
+    }
+
+    .main-item {
+        margin: 30px 0;
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            background: #fff;
+            padding: 10Px;
+
+            .item-header-left {
+                font-size: 12Px;
+                font-weight: 500;
+            }
+
+            .item-header-right {
+                font-size: 12Px;
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        .item-image {
+            padding: 20Px 10Px;
+            background: rgba(245, 245, 245, 0.4);
+
+            .item-image-detailed {
+                width: 50Px;
+                height: 50Px;
+            }
+        }
+
+        .order-style {
+            font-size: 10Px;
+            color: #808080;
+            padding: 1Px 0;
+        }
+
+        .order-time-money {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .order-money {
+                font-size: 14Px;
+                font-weight: 500;
+                color: #000;
+            }
+        }
+    }
+
+    .item1 {
+        height: 200Px;
+        background: #fff;
+        padding: 0 10Px;
+    }
+}
+
+.no-order {
+    font-size: 10Px;
+    text-align: center;
+    color: #696969;
+    height: 30Px;
+    line-height: 30Px;
+    background: transparent;
+    background: #F5F5F5;
+}
