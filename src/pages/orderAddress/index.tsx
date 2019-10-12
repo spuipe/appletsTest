@@ -5,7 +5,7 @@ import { View, Text, ScrollView, Map } from '@tarojs/components'
 import './index.scss'
 import { connect } from '@tarojs/redux';
 import QQMapWX from '../../utils/qqmap-wx-jssdk.min.js'
-import {location as locationInfo} from '../../actions/counter';
+import {location as locationInfo,selectShopLocation as selectShopLocationInfo} from '../../actions/counter';
 
 let qqmapsdk = new QQMapWX({ key: 'U3HBZ-TEYW4-76HUD-DZQBT-KXY22-NJBUE' })
 
@@ -48,10 +48,12 @@ type State = PageOwnState
 type PageMapSateProps = {
     location: Object
     recentShop: Object
+    selectShopLocation: Object
 }
 
 type PageDispatchProps = {
     setLocation: ()=>void
+    setSelectShopLocation: () => void
 }
 
 type IPros = PageMapSateProps & PageDispatchProps & PageOwnProps
@@ -61,11 +63,14 @@ interface OrderAddress {
 }
 
 
-@connect(({ location, recentShop }) => ({
-    location, recentShop
+@connect(({ location, recentShop,selectShopLocation }) => ({
+    location, recentShop,selectShopLocation
 }), (dispatch) => ({
    setLocation(location){
        dispatch(locationInfo(location))
+   },
+   setSelectShopLocation(selectShopLocation){
+       dispatch(selectShopLocationInfo(selectShopLocation))
    }
 }))
 
@@ -101,14 +106,15 @@ class OrderAddress extends Component {
 
     componentWillMount() {
         Taro.showLoading({ title: '加载中' })
-        const { recentShop } = this.props;
-        this.setState({
-            latitude: recentShop.recentShop.location.lat,
-            longitude: recentShop.recentShop.location.lng
-        })
     }
 
-    componentDidShow(){}
+    componentDidShow(){
+        const { selectShopLocation } = this.props;
+        this.setState({
+            latitude: selectShopLocation.selectShopLocation.location.lat,
+            longitude: selectShopLocation.selectShopLocation.location.lng
+        })
+    }
 
     componentDidMount() {
         const { location } = this.props
@@ -163,8 +169,7 @@ class OrderAddress extends Component {
         });
     }
 
-    toShopItem = (item) => {
-        console.log(item);
+    toShopItem = (item) => {  // 点击商铺列表项触发
         this.searchShop(item.location.lat,item.location.lng)
         this.setState({
             longitude: item.location.lng,
@@ -172,16 +177,16 @@ class OrderAddress extends Component {
             district: item.ad_info.district,
             city: item.ad_info.city
         })
-        this.props.setLocation({latitude:item.location.lat,longitude:item.location.lng})
+        this.props.setSelectShopLocation(item)
         Taro.navigateBack()
     }
 
-    mapTap = (e)=>{
-        console.log(e.markerId);
+    mapTap = (e)=>{  // 点击地图上标记泡泡触发
         const { markers } = this.state;
         for(let item in markers){
             if(markers[item].id == e.markerId){
                 this.searchShop(markers[item].latitude,markers[item].longitude);
+                this.setState({ latitude: markers[item].latitude,longitude: markers[item].longitude })
             }
         }
     }
@@ -196,8 +201,8 @@ class OrderAddress extends Component {
                 </View>
                 <Map id='map' markers={this.state.markers} longitude={longitude} latitude={latitude} className='map' onMarkerTap={this.mapTap}></Map>
 
-                <View className='shopListArea' style={`height: ${this.state.shopListHeight}px`}>
-                    <ScrollView className='shopList' style={`height: ${this.state.shopListHeight}px`} scrollY scrollWithAnimation>
+                <View className='shopListArea' style={`height: ${this.state.shopListHeight}rpx`}>
+                    <ScrollView className='shopList' style={`height: ${this.state.shopListHeight}rpx`} scrollY scrollWithAnimation>
                         {this.state.shopList.map(item => {
                             return (
                                 <View className='shopListItem'>

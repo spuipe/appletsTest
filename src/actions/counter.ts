@@ -3,7 +3,8 @@ import {
   MINUS,
   USERDATA,
   LOCATION,
-  RECENTSHOP
+  RECENTSHOP,
+  SELECTSHOPLOCATION
 } from '../constants/counter'
 
 export const add = () => {
@@ -35,6 +36,13 @@ export const recentShop = (recentShop)=>{
   return {
     type: RECENTSHOP,
     recentShop
+  }
+}
+
+export const selectShopLocation = (selectShopLocation)=>{
+  return {
+    type: SELECTSHOPLOCATION,
+    selectShopLocation
   }
 }
 

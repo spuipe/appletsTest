@@ -34,13 +34,11 @@ page {
 }
 
 .shopListArea {
-    background: #F5F5F5;
-    padding: 50px 30px;
+    padding: 50px 30px 0 30px;
     box-sizing: border-box;
 
     .shopList {
         width: 100%;
-        background: #F5F5F5;
         ::-webkit-scrollbar {
             display: none;
         }
@@ -48,7 +46,7 @@ page {
         .shopListItem {
             display: flex;
             padding: 30px;
-            background: #fff;
+            background: rgba(245,245,245,0.5);
             margin-bottom: 50px;
 
             .itemInfo {

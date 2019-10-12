@@ -9,6 +9,7 @@ page {
     display: flex;
     justify-content: space-between;
     padding: 40px 40px 15px 40px;
+    box-sizing: border-box;
 
     .shopname {
         font-size: 30px;
@@ -36,6 +37,7 @@ page {
     padding: 40px 40px 20px 40px;
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
 
     .header-information-font {
         color: #808080;
@@ -50,7 +52,7 @@ page {
 
     .main-left {
         width: 250px;
-        height: calc(100vh - 85Px);
+        height: calc(100vh - 190px);
 
         .main-left-item {
             font-size: 12Px;
@@ -70,7 +72,7 @@ page {
 
     .main-right {
         padding: 0 20x;
-        height: calc(100vh - 80Px);
+        height: calc(100vh - 190px);
 
         .main-image {
             width: 100%;
@@ -228,7 +230,8 @@ page {
 
         .detailedArea {
             height: 450px;
-            padding-bottom: 50px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
 
             .commodityName{
                 font-size: 30px;
@@ -254,7 +257,7 @@ page {
                 display: none;
             }
         }
-        
+
         .addShopingCar {
             .tap {
                 display: flex;
@@ -320,6 +323,7 @@ page {
                     font-size: 14Px;
                     color: #fff;
                     border: none;
+                    outline: none;
                 }
             }
         }
@@ -339,4 +343,61 @@ page {
 
 .optionsItemPrice{
     color: $mainColor;
+}
+
+.shoppingBagArea{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    .shoppingBagPrice{
+        flex: 5;
+        background: #F5F5F5;
+        text-align: right;
+        width: 100%;
+        height: 100%;
+        font-weight: 500;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        position: relative;
+
+        .shoppingBag{
+            position: absolute;
+            background:$white;
+            color: #000;
+            top: -5px;
+            left: 50px;
+            width: 150px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 25px;
+            border-radius: 40px;
+
+            .commodityCount{
+              position: absolute;
+              width: 20Px;
+              height: 20Px;
+              background: $mainColor;
+              color: $white;
+              border-radius: 50%;
+              text-align: center;
+              line-height: 20Px;
+              top: -10px;
+              right: 0;
+            }
+        }
+    }
+
+    .settlement{
+        flex: 2;
+        background: $mainColor;
+        color: $white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
