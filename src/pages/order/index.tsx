@@ -163,7 +163,7 @@ class Order extends Component {
     shoppingBagFlag: [],
     TabCur: 0,  //点击侧边导航栏的key值
     MainCur: 0,  // 商品列表的标题key值
-    VerticalNavTop: 0,
+    VerticalNavTop: 0, // 滚动条的高度
     shoppingDialogHeight: 0,
     shoppingScrollViewHeight: 0,
     commodityAreaHegiht: 0,
